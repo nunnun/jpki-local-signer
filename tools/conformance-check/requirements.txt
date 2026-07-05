@@ -1,0 +1,2 @@
+pikepdf==10.9.1
+pytest==9.1.1

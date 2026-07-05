@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- The app performs no tracking. -->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<!-- The app collects no data. Nothing (PIN, signature values, card
+	     responses, documents, or identifiers) leaves the device; there is
+	     no networking code at all (design.md NFR-01/02/03). -->
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<!-- No required-reason APIs are used. File access is limited to the
+	     app's own temporary directory for the share sheet; no file
+	     timestamps, UserDefaults, disk space, boot time, or keyboard APIs
+	     are accessed. -->
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array/>
+</dict>
+</plist>

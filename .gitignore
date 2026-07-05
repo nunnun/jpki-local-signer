@@ -1,0 +1,13 @@
+.DS_Store
+.build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+build/
+tools/conformance-check/fixtures/known-good/
+tools/conformance-check/.venv/
+__pycache__/
+.pytest_cache/
+tmp/
+jpki/

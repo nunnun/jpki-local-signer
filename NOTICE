@@ -1,0 +1,37 @@
+JPKI Local Signer
+Copyright 2026 Hirotaka Nakajima
+
+This product is licensed under the Apache License, Version 2.0 (the
+"License"); see the LICENSE file for the full text. You may obtain a copy
+of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------------------------------
+Third-party components
+--------------------------------------------------------------------------
+
+This product depends on the following open-source libraries, each licensed
+under the Apache License, Version 2.0 (see sbom.json for pinned versions
+and revisions):
+
+  - apple/swift-crypto        Copyright Apple Inc. and the SwiftCrypto authors
+  - apple/swift-asn1          Copyright Apple Inc. and the SwiftASN1 authors
+  - apple/swift-certificates  Copyright Apple Inc. and the SwiftCertificates authors
+
+Their source is available at:
+
+  - https://github.com/apple/swift-crypto
+  - https://github.com/apple/swift-asn1
+  - https://github.com/apple/swift-certificates
+
+--------------------------------------------------------------------------
+Bundled data (not covered by the Apache License)
+--------------------------------------------------------------------------
+
+Sources/SelfVerify/TrustAnchors/ contains the JPKI signing CA (公的個人認証
+サービス 署名用CA) root certificates published by the Japan Agency for
+Local Authority Information Systems (J-LIS, 地方公共団体情報システム機構).
+These certificates are third-party public-key material, redistributed
+unmodified for offline trust classification, and are not original works of
+this project. Their SHA-256 fingerprints are recorded in
+Sources/SelfVerify/JPKITrustAnchors.swift and shown in the app's About
+screen, and were verified against the values published by J-LIS.

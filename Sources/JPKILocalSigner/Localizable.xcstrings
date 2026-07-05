@@ -1,0 +1,156 @@
+{
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "マイナンバーカードを iPhone 上部に重ねたまま動かさないでください" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold your My Number Card against the top of the iPhone and keep it still"
+          }
+        }
+      }
+    },
+    "署名が完了しました" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing complete"
+          }
+        }
+      }
+    },
+    "暗証番号を確認しています…（残り%d回）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking the signature PIN… (%d attempts left)"
+          }
+        }
+      }
+    },
+    "証明書を読み取っています…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reading the certificate…"
+          }
+        }
+      }
+    },
+    "署名者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signer"
+          }
+        }
+      }
+    },
+    "署名しています…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing…"
+          }
+        }
+      }
+    },
+    "暗証番号が違います（残り%d回）。連続で間違えるとロックされます。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wrong signature PIN (%d attempts left). Repeated failures will lock the card."
+          }
+        }
+      }
+    },
+    "暗証番号がロックされています。市区町村の窓口で初期化してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The signature PIN is locked. Please have it reset at your municipal office."
+          }
+        }
+      }
+    },
+    "暗証番号を確認できませんでした。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not verify the signature PIN."
+          }
+        }
+      }
+    },
+    "署名用パスワードは英数字6〜16桁です。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The signature PIN is 6–16 letters and digits."
+          }
+        }
+      }
+    },
+    "署名用電子証明書が有効期間外です。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The signing certificate is outside its validity period."
+          }
+        }
+      }
+    },
+    "暗証番号の残り試行回数が1回です。次に間違えるとロックされるため中断しました。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Only one PIN attempt remains. Stopped so a typo cannot lock the card."
+          }
+        }
+      }
+    },
+    "カードとの通信に失敗しました。もう一度かざしてください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Communication with the card failed. Please hold it to the phone again."
+          }
+        }
+      }
+    },
+    "カードを認識できませんでした。位置を調整してもう一度かざしてください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not detect the card. Adjust its position and try again."
+          }
+        }
+      }
+    },
+    "署名に失敗しました。もう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing failed. Please try again."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

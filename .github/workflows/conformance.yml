@@ -1,0 +1,75 @@
+name: conformance
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  # Library tests + registry-format conformance (no code signing, no secrets).
+  conformance:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select latest Xcode
+        run: |
+          sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)/Contents/Developer"
+          swift --version
+
+      - name: No-network guarantee (NFR-01)
+        run: ./scripts/check-no-network.sh
+
+      - name: Swift tests
+        run: swift test
+
+      - name: Generate conforming sample (TestSigner)
+        run: swift run TestSigner /tmp/base_signed.pdf
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install checker dependencies
+        run: pip install -r tools/conformance-check/requirements.txt
+
+      - name: Conformance check on TestSigner output (all checks must PASS)
+        run: python tools/conformance-check/check.py /tmp/base_signed.pdf
+
+      - name: Co-sign and check (multi-signature increments)
+        run: |
+          swift run TestSigner /tmp/cosigned.pdf "二人目" /tmp/base_signed.pdf
+          python tools/conformance-check/check.py /tmp/cosigned.pdf
+
+      - name: Checker tests (positive + synthetic negatives)
+        env:
+          CONFORMANCE_BASE_PDF: /tmp/base_signed.pdf
+        run: pytest tools/conformance-check/tests -q
+
+  # App builds for both platforms. Catches app-layer/UI/project issues that
+  # the package tests cannot (SwiftUI, entitlements, asset catalog, pbxproj).
+  # Unsigned (CODE_SIGNING_ALLOWED=NO) so no secrets are needed.
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select latest Xcode
+        run: |
+          sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)/Contents/Developer"
+          xcodebuild -version
+
+      - name: Build app (iOS)
+        run: |
+          xcodebuild -project JPKILocalSignerApp.xcodeproj \
+            -scheme JPKILocalSignerApp \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Build app (macOS)
+        run: |
+          xcodebuild -project JPKILocalSignerApp.xcodeproj \
+            -scheme JPKILocalSignerApp \
+            -destination 'platform=macOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
