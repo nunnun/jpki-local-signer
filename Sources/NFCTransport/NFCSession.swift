@@ -80,7 +80,7 @@ public final class ISO7816CardSession: NSObject, @unchecked Sendable {
             lock.unlock()
 
             guard let session = NFCTagReaderSession(pollingOption: .iso14443, delegate: self) else {
-                finish(with: .failure(NFCSessionError.readingUnavailable), invalidating: nil)
+                finish(with: .failure(NFCSessionError.readingUnavailable))
                 return
             }
 
@@ -93,18 +93,25 @@ public final class ISO7816CardSession: NSObject, @unchecked Sendable {
         }
     }
 
-    /// Resumes the continuation exactly once and optionally closes the sheet.
-    private func finish(with result: Result<any Sendable, Error>, invalidating session: NFCTagReaderSession?) {
+    /// Resumes the continuation exactly once and closes the NFC sheet.
+    ///
+    /// The session is read from stored state rather than captured, so the
+    /// concurrent work Task never has to capture the non-Sendable
+    /// `NFCTagReaderSession`. Pass `alreadyInvalidated: true` from the
+    /// invalidation delegate callback, where the session is already dead and
+    /// must not be invalidated again.
+    private func finish(with result: Result<any Sendable, Error>, alreadyInvalidated: Bool = false) {
         lock.lock()
         let continuation = self.continuation
         self.continuation = nil
+        let session = self.session
         lock.unlock()
 
         guard let continuation else {
             return
         }
 
-        if let session {
+        if !alreadyInvalidated, let session {
             switch result {
             case .success:
                 session.alertMessage = successMessage
@@ -131,7 +138,7 @@ extension ISO7816CardSession: NFCTagReaderSessionDelegate {
             mapped = NFCSessionError.sessionInvalidated(description: error.localizedDescription)
         }
         // The session is already dead; never call invalidate on it again.
-        finish(with: .failure(mapped), invalidating: nil)
+        finish(with: .failure(mapped), alreadyInvalidated: true)
     }
 
     public func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
@@ -143,21 +150,21 @@ extension ISO7816CardSession: NFCTagReaderSessionDelegate {
         session.connect(to: firstTag) { [weak self] error in
             guard let self else { return }
             if error != nil {
-                self.finish(with: .failure(NFCSessionError.tagConnectionFailed), invalidating: session)
+                self.finish(with: .failure(NFCSessionError.tagConnectionFailed))
                 return
             }
 
+            // `transport` is @unchecked Sendable; the session is not captured
+            // here (finish reads it from stored state), so the Task closure
+            // carries no non-Sendable state across the concurrency boundary.
             let transport = CoreNFCISO7816Transport(tag: iso7816Tag)
-            // NFCTagReaderSession is not Sendable; it is only handed to
-            // finish(with:invalidating:), which touches it once.
-            nonisolated(unsafe) let session = session
             let task = Task { [weak self] in
                 guard let self else { return }
                 do {
                     let value = try await self.body(transport, self)
-                    self.finish(with: .success(value), invalidating: session)
+                    self.finish(with: .success(value))
                 } catch {
-                    self.finish(with: .failure(error), invalidating: session)
+                    self.finish(with: .failure(error))
                 }
             }
 
