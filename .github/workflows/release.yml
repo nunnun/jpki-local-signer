@@ -1,0 +1,79 @@
+name: release
+
+# Build the macOS .dmg on GitHub Actions when a version tag is pushed, and
+# attach it to the GitHub Release. Building in CI (not on a developer's
+# machine) keeps releases reproducible and auditable, in line with the
+# project's transparency goals. The build is unsigned / not notarized for
+# now (see the release notes).
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  macos-dmg:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Select latest Xcode
+        run: |
+          sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)/Contents/Developer"
+          xcodebuild -version
+
+      - name: Build macOS app (Release, ad-hoc signed)
+        run: |
+          set -euxo pipefail
+          xcodebuild -project JPKILocalSignerApp.xcodeproj \
+            -scheme JPKILocalSignerApp \
+            -configuration Release \
+            -destination 'generic/platform=macOS' \
+            -derivedDataPath build-release \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=YES \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM="" \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            build
+
+      - name: Package .dmg
+        run: |
+          set -euxo pipefail
+          VERSION="${GITHUB_REF_NAME#v}"
+          APP="build-release/Build/Products/Release/JPKILocalSignerApp.app"
+          test -d "$APP"
+          STAGE="$(mktemp -d)"
+          cp -R "$APP" "$STAGE/"
+          ln -s /Applications "$STAGE/Applications"
+          mkdir -p dist
+          hdiutil create -volname "JPKI Local Signer" \
+            -srcfolder "$STAGE" -ov -format UDZO \
+            "dist/JPKILocalSigner-${VERSION}-macOS.dmg"
+          shasum -a 256 dist/*.dmg
+
+      - name: Create GitHub Release and upload the .dmg
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          printf '%s\n' \
+            "JPKI Local Signer ${GITHUB_REF_NAME} — macOS preview build" \
+            "" \
+            "USB PC/SC 対応 IC カードリーダーでマイナンバーカード署名、および署名検証を行う macOS アプリのプレビュービルドです。" \
+            "" \
+            "- **未署名・未 notarize** です。Gatekeeper が初回起動をブロックした場合は、アプリを右クリック →「開く」、または隔離属性を外してください:" \
+            "  xattr -dr com.apple.quarantine /Applications/JPKILocalSignerApp.app" \
+            "- 署名・検証にはカードリーダーの接続が必要です。" \
+            "- iOS 版はソースからビルドしてください（各自の Apple Developer チームでの署名が必要）。" \
+            "- この .dmg は GitHub Actions 上でビルドされています（ローカルビルドではありません）。" \
+            > notes.md
+          gh release create "$GITHUB_REF_NAME" \
+            --title "JPKI Local Signer ${GITHUB_REF_NAME}" \
+            --notes-file notes.md \
+            --prerelease \
+            dist/*.dmg
