@@ -121,12 +121,20 @@ struct SigningPreparationView: View {
                     Button {
                         Task { await model.startSigning() }
                     } label: {
-                        Label(model.isSigning ? "署名処理中…" : "署名する", systemImage: "wave.3.right")
-                            .frame(maxWidth: .infinity)
+                        // Explicit HStack (not Label) so the NFC glyph renders
+                        // identically in every state. The button stays enabled
+                        // regardless of PIN entry so its appearance never
+                        // changes; startSigning() validates the PIN and shows
+                        // an inline message if it is missing or malformed.
+                        HStack(spacing: 8) {
+                            Image(systemName: "wave.3.right")
+                            Text(model.isSigning ? "署名処理中…" : "署名する")
+                        }
+                        .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
-                    .disabled(!model.isPINValid || model.isSigning)
+                    .disabled(model.isSigning)
                     .accessibilityHint("マイナンバーカードをiPhoneにかざして署名します")
                 } else {
                     Label("この端末はNFC読み取りに対応していません。", systemImage: "wifi.slash")
