@@ -43,7 +43,10 @@ private extension APDUCommand {
     var coreNFCExpectedResponseLength: Int {
         switch expectedResponseLength {
         case nil:
-            return 0
+            // -1 tells CoreNFC there is no Le field. 0 is out of the valid
+            // range (1...65536 or -1) and makes NFCISO7816APDU reject the
+            // command with "Invalid expectedResponseLength value".
+            return -1
         case .exact(let length):
             return Int(length)
         case .extended(let length):
