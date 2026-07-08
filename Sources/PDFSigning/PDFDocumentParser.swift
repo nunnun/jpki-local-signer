@@ -687,18 +687,113 @@ enum PDFDictionaryScanner {
         return String(latin1: dictionary)
     }
 
-    /// Matches `/name` only when followed by a delimiter, searching from the
-    /// end so the newest entry in the body wins.
+    /// Matches `/name` as a key of the outermost dictionary only.
+    ///
+    /// The body is a `<< … >>` dictionary; keys live at nesting depth 1.
+    /// Matches inside nested dictionaries (`/Group<</Type/Group…>>`), arrays,
+    /// strings, or hex strings are skipped so a page's transparency-group
+    /// `/Type/Group` never shadows the page's own `/Type/Page`. Among
+    /// top-level occurrences the last one wins (newest incremental entry).
     static func range(ofName name: String, in body: String) -> Range<String.Index>? {
-        var searchRange: Range<String.Index> = body.startIndex..<body.endIndex
+        let target = "/\(name)"
+        var depth = 0
         var lastMatch: Range<String.Index>?
-        while let match = body.range(of: "/\(name)", range: searchRange) {
-            if match.upperBound == body.endIndex || isDelimiter(body[match.upperBound]) {
-                lastMatch = match
+        var i = body.startIndex
+        let end = body.endIndex
+
+        while i < end {
+            let c = body[i]
+            switch c {
+            case "(":
+                i = skipLiteralString(body, from: i)
+            case "<":
+                let next = body.index(after: i)
+                if next < end, body[next] == "<" {
+                    depth += 1
+                    i = body.index(after: next)
+                } else {
+                    i = skipHexString(body, from: i)
+                }
+            case ">":
+                let next = body.index(after: i)
+                if next < end, body[next] == ">" {
+                    depth -= 1
+                    i = body.index(after: next)
+                } else {
+                    i = body.index(after: i)
+                }
+            case "[":
+                depth += 1
+                i = body.index(after: i)
+            case "]":
+                depth -= 1
+                i = body.index(after: i)
+            case "%":
+                i = skipComment(body, from: i)
+            case "/":
+                if depth == 1, matches(body, at: i, target) {
+                    let matchEnd = body.index(i, offsetBy: target.count)
+                    if matchEnd == end || isDelimiter(body[matchEnd]) {
+                        lastMatch = i..<matchEnd
+                    }
+                }
+                i = body.index(after: i)
+            default:
+                i = body.index(after: i)
             }
-            searchRange = match.upperBound..<body.endIndex
         }
         return lastMatch
+    }
+
+    private static func matches(_ body: String, at start: String.Index, _ target: String) -> Bool {
+        var i = start
+        for character in target {
+            if i >= body.endIndex || body[i] != character { return false }
+            i = body.index(after: i)
+        }
+        return true
+    }
+
+    /// Skips a `( … )` literal string from the opening paren, honoring
+    /// balanced parens and `\` escapes; returns the index past the close.
+    private static func skipLiteralString(_ body: String, from start: String.Index) -> String.Index {
+        var i = body.index(after: start)
+        var depth = 1
+        while i < body.endIndex {
+            let c = body[i]
+            if c == "\\" {
+                i = body.index(after: i)
+                if i < body.endIndex { i = body.index(after: i) }
+                continue
+            } else if c == "(" {
+                depth += 1
+            } else if c == ")" {
+                depth -= 1
+                if depth == 0 { return body.index(after: i) }
+            }
+            i = body.index(after: i)
+        }
+        return i
+    }
+
+    /// Skips a `< … >` hex string from the opening angle bracket; returns the
+    /// index past the close.
+    private static func skipHexString(_ body: String, from start: String.Index) -> String.Index {
+        var i = body.index(after: start)
+        while i < body.endIndex {
+            if body[i] == ">" { return body.index(after: i) }
+            i = body.index(after: i)
+        }
+        return i
+    }
+
+    /// Skips a `%` comment to the end of the line.
+    private static func skipComment(_ body: String, from start: String.Index) -> String.Index {
+        var i = start
+        while i < body.endIndex, body[i] != "\n", body[i] != "\r" {
+            i = body.index(after: i)
+        }
+        return i
     }
 
     static func isDelimiter(_ character: Character) -> Bool {
