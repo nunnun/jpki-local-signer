@@ -6,9 +6,5 @@
 	<array>
 		<string>TAG</string>
 	</array>
-	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
-	<array>
-		<string>D392F000260100000001</string>
-	</array>
 </dict>
 </plist>
