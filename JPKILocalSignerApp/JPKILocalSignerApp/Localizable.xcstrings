@@ -1,41 +1,51 @@
 {
-  "sourceLanguage": "ja",
-  "strings": {
-    "%@ 〜 %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@ – %2$@"
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "「署名する」を押すと、マイナンバーカードをかざす画面が表示されます。読み取りが終わるまでカードを iPhone の上部に重ねたまま動かさないでください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tapping “Sign” opens the card-reading screen. Hold the card against the top of your iPhone and keep it still until reading finishes."
           }
         }
       }
     },
-    "%@（%@）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%1$@ (%2$@)"
+    "%@ 〜 %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ – %2$@"
           }
         }
       }
     },
-    "%lldページ": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld page"
+    "%@（%@）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "%lldページ" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld page"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "%lld pages"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld pages"
                 }
               }
             }
@@ -43,243 +53,377 @@
         }
       }
     },
-    "%lld件": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld"
+    "%lld件" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
           }
         }
       }
     },
-    "6文字から16文字の半角英数字で入力してください": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter 6 to 16 alphanumeric characters"
+    "6文字から16文字の半角英数字で入力してください" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter 6 to 16 alphanumeric characters"
           }
         }
       }
     },
-    "ByteRange": {},
-    "JPKI Local Signer": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "JPKI Local Signer"
+    "ByteRange" : {
+
+    },
+    "JPKI Local Signer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JPKI Local Signer"
           }
         }
       }
     },
-    "JPKI Local Signer は、マイナンバーカードの署名用電子証明書を使い、iPhone 単体で PDF に電子署名を行うオープンソースのツールです。署名処理はすべて端末内で完結し、外部サーバーや事業者を経由しません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "JPKI Local Signer is an open-source tool that digitally signs PDFs using the signature certificate on your My Number Card, entirely on your iPhone. All signing happens on-device and never passes through external servers or third parties."
+    "JPKI Local Signer は、マイナンバーカードの署名用電子証明書を使い、iPhone 単体で PDF に電子署名を行うオープンソースのツールです。署名処理はすべて端末内で完結し、外部サーバーや事業者を経由しません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JPKI Local Signer is an open-source tool that digitally signs PDFs using the signature certificate on your My Number Card, entirely on your iPhone. All signing happens on-device and never passes through external servers or third parties."
           }
         }
       }
     },
-    "JPKI の判定はアプリ同梱の JPKI ルート証明書（署名用CA 01〜03）との照合によります。その他の認証局はPDF内の証明書チェーンの検証のみで、失効確認（CRL/OCSP）はいずれも行っていません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The JPKI classification is based on matching against the JPKI root certificates bundled with the app (signature CA 01–03). Other authorities are verified only against the certificate chain embedded in the PDF; revocation (CRL/OCSP) is never checked."
+    "JPKI の判定はアプリ同梱の JPKI ルート証明書（署名用CA 01〜03）との照合によります。その他の認証局はPDF内の証明書チェーンの検証のみで、失効確認（CRL/OCSP）はいずれも行っていません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The JPKI classification is based on matching against the JPKI root certificates bundled with the app (signature CA 01–03). Other authorities are verified only against the certificate chain embedded in the PDF; revocation (CRL/OCSP) is never checked."
           }
         }
       }
     },
-    "JPKI（マイナンバーカード）の署名ではありません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not a JPKI (My Number Card) signature"
+    "JPKI（マイナンバーカード）の署名ではありません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not a JPKI (My Number Card) signature"
           }
         }
       }
     },
-    "PDF": {},
-    "PDFが選択されていません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No PDF selected"
+    "PDF" : {
+
+    },
+    "PDFが選択されていません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No PDF selected"
           }
         }
       }
     },
-    "PDFに埋め込まれた電子署名の値と、署名以降の改ざんの有無を端末内だけで確認します。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Checks the digital signatures embedded in the PDF and whether it was altered after signing — entirely on this device."
+    "PDFに埋め込まれた電子署名の値と、署名以降の改ざんの有無を端末内だけで確認します。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checks the digital signatures embedded in the PDF and whether it was altered after signing — entirely on this device."
           }
         }
       }
     },
-    "PDFの保存に失敗しました: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Failed to save the PDF: %@"
+    "PDFの保存に失敗しました: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to save the PDF: %@"
           }
         }
       }
     },
-    "PDFの読み込みに失敗しました。もう一度お試しください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Failed to load the PDF. Please try again."
+    "PDFの読み込みに失敗しました。もう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to load the PDF. Please try again."
           }
         }
       }
     },
-    "PDFを保存": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save PDF"
+    "PDFプレビュー" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF preview"
           }
         }
       }
     },
-    "PDFを保存しました。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PDF saved."
+    "PDFプレビュー: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF preview: %@"
           }
         }
       }
     },
-    "PDFを共有": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Share PDF"
+    "PDFを保存" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save PDF"
           }
         }
       }
     },
-    "PDFを選択": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose PDF"
+    "PDFを保存しました。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF saved."
           }
         }
       }
     },
-    "PDFを選択できませんでした。もう一度お試しください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The PDF could not be selected. Please try again."
+    "PDFを共有" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share PDF"
           }
         }
       }
     },
-    "PDFプレビュー": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PDF preview"
+    "PDFを選択" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose PDF"
           }
         }
       }
     },
-    "PDFプレビュー: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PDF preview: %@"
+    "PDFを選択できませんでした。もう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The PDF could not be selected. Please try again."
           }
         }
       }
     },
-    "PINは6〜16桁の半角英数字で入力してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The PIN must be 6–16 alphanumeric characters."
+    "PINは6〜16桁の半角英数字で入力してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The PIN must be 6–16 alphanumeric characters."
           }
         }
       }
     },
-    "PINやカードの応答内容を保存・記録することはありません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PINs and card responses are never stored or logged"
+    "PINやカードの応答内容を保存・記録することはありません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PINs and card responses are never stored or logged"
           }
         }
       }
     },
-    "SHA-256 フィンガープリント": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "SHA-256 Fingerprint"
+    "SHA-256 フィンガープリント" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHA-256 Fingerprint"
           }
         }
       }
     },
-    "USBカードリーダーにマイナンバーカードを挿入し、「署名する」を押してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Insert your My Number Card into the USB card reader, then press “Sign”."
+    "USBカードリーダーにマイナンバーカードを挿入し、「署名する」を押してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insert your My Number Card into the USB card reader, then press “Sign”."
           }
         }
       }
     },
-    "「署名する」を押すと、マイナンバーカードをかざす画面が表示されます。読み取りが終わるまでカードを iPhone の上部に重ねたまま動かさないでください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tapping “Sign” opens the card-reading screen. Hold the card against the top of your iPhone and keep it still until reading finishes."
+    "カードとの通信が中断されました。もう一度かざしてください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Communication with the card was interrupted. Please hold it to the iPhone again."
           }
         }
       }
     },
-    "この PDF には既に %lld 件の署名があります。追加署名は増分更新で付与され、既存の署名は保持されます。": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "This PDF already contains %lld signature. Your signature will be added as an incremental update; the existing signature is preserved."
+    "カードとの通信に失敗しました。もう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Communication with the card failed. Please try again."
+          }
+        }
+      }
+    },
+    "カードとの通信に失敗しました。もう一度かざしてください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Communication with the card failed. Please hold it again."
+          }
+        }
+      }
+    },
+    "カードにアクセスできませんでした。カードを挿し直してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The card could not be accessed. Please reinsert it."
+          }
+        }
+      }
+    },
+    "カードに接続できませんでした。位置を調整してもう一度かざしてください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not connect to the card. Adjust its position and hold it again."
+          }
+        }
+      }
+    },
+    "カードの状態を確認できませんでした。もう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The card's status could not be checked. Please try again."
+          }
+        }
+      }
+    },
+    "カードリーダー" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card Reader"
+          }
+        }
+      }
+    },
+    "カードリーダーが見つかりません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No card reader found"
+          }
+        }
+      }
+    },
+    "カードリーダーにカードが見つかりません。カードを挿入してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No card was found in the reader. Please insert your card."
+          }
+        }
+      }
+    },
+    "カードリーダーのマイナンバーカードで署名します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signs with the My Number Card in the card reader"
+          }
+        }
+      }
+    },
+    "カードリーダーの一覧を更新します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refreshes the card reader list"
+          }
+        }
+      }
+    },
+    "カードを待っています…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting for the card…"
+          }
+        }
+      }
+    },
+    "カードを認識できませんでした。マイナンバーカードを iPhone にかざしてください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The card could not be recognized. Hold your My Number Card to the iPhone."
+          }
+        }
+      }
+    },
+    "キャンセル" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "この PDF には既に %lld 件の署名があります。追加署名は増分更新で付与され、既存の署名は保持されます。" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "This PDF already contains %lld signature. Your signature will be added as an incremental update; the existing signature is preserved."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "This PDF already contains %lld signatures. Your signature will be added as an incremental update; the existing signatures are preserved."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "This PDF already contains %lld signatures. Your signature will be added as an incremental update; the existing signatures are preserved."
                 }
               }
             }
@@ -287,665 +431,575 @@
         }
       }
     },
-    "このPDFが登記オンライン申請の形式要件に適合するかを確認します。署名の有効性の判定とは独立です": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Checks whether this PDF meets the format requirements for MOJ registry online applications. Independent of signature validity"
+    "このPDFが登記オンライン申請の形式要件に適合するかを確認します。署名の有効性の判定とは独立です" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checks whether this PDF meets the format requirements for MOJ registry online applications. Independent of signature validity"
           }
         }
       }
     },
-    "このPDFをどうしますか": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "What would you like to do with this PDF?"
+    "このPDFをどうしますか" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What would you like to do with this PDF?"
           }
         }
       }
     },
-    "このPDFを検証モードで開きます": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opens this PDF in verification mode"
+    "このPDFを検証モードで開きます" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens this PDF in verification mode"
           }
         }
       }
     },
-    "このPDFを署名モードで開きます": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opens this PDF in signing mode"
+    "このPDFを署名モードで開きます" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens this PDF in signing mode"
           }
         }
       }
     },
-    "このアプリについて": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "About This App"
+    "このアプリについて" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About This App"
           }
         }
       }
     },
-    "この判定は法務省の形式要件（adbe.pkcs7.detached 等）への適合であり、署名の有効性とは独立です。クラウド署名等は署名として有効でも登記形式には適合しません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This check covers conformance to the MOJ (Ministry of Justice) format requirements (adbe.pkcs7.detached, etc.) and is independent of signature validity. Cloud-signed PDFs can be valid signatures yet still not conform to the registry format."
+    "この判定は法務省の形式要件（adbe.pkcs7.detached 等）への適合であり、署名の有効性とは独立です。クラウド署名等は署名として有効でも登記形式には適合しません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This check covers conformance to the MOJ (Ministry of Justice) format requirements (adbe.pkcs7.detached, etc.) and is independent of signature validity. Cloud-signed PDFs can be valid signatures yet still not conform to the registry format."
           }
         }
       }
     },
-    "この機能は開発検証用です。実際のマイナンバーカードやNFCは使用せず、ダミーの証明書と署名値でPDF組み立てパイプラインのみを検証します。本番の署名としては使用できません。": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This feature is for development testing only. It exercises the PDF assembly pipeline with a dummy certificate and signature value, without a real My Number Card or NFC. It cannot be used for production signatures."
+    "この機能は開発検証用です。実際のマイナンバーカードやNFCは使用せず、ダミーの証明書と署名値でPDF組み立てパイプラインのみを検証します。本番の署名としては使用できません。" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This feature is for development testing only. It exercises the PDF assembly pipeline with a dummy certificate and signature value, without a real My Number Card or NFC. It cannot be used for production signatures."
           }
         }
       }
     },
-    "この環境はNFC読み取りに対応していません。": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "NFC reading is not available in this environment."
+    "この環境はNFC読み取りに対応していません。" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC reading is not available in this environment."
           }
         }
       }
     },
-    "この端末は NFC 読み取りに対応していません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This device does not support NFC reading."
+    "この端末は NFC 読み取りに対応していません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This device does not support NFC reading."
           }
         }
       }
     },
-    "この端末はNFC読み取りに対応していません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This device does not support NFC reading."
+    "この端末はNFC読み取りに対応していません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This device does not support NFC reading."
           }
         }
       }
     },
-    "この署名は検証できませんでした": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This signature could not be verified"
+    "この署名は検証できませんでした" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This signature could not be verified"
           }
         }
       }
     },
-    "この署名は署名時点の版までを保証します（後から追加署名あり）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This signature covers the document up to its own revision (more signatures were added later)"
+    "この署名は署名時点の版までを保証します（後から追加署名あり）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This signature covers the document up to its own revision (more signatures were added later)"
           }
         }
       }
     },
-    "ご注意": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Caution"
+    "ご注意" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caution"
           }
         }
       }
     },
-    "やめる": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stop"
+    "シリアル番号" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serial Number"
           }
         }
       }
     },
-    "カードとの通信が中断されました。もう一度かざしてください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Communication with the card was interrupted. Please hold it to the iPhone again."
+    "スマートカードサービスを利用できません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smart card services are unavailable"
           }
         }
       }
     },
-    "カードとの通信に失敗しました。もう一度お試しください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Communication with the card failed. Please try again."
+    "スマートカードサービスを利用できません。アプリのスマートカード権限を確認してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smart card services are unavailable. Check the app's smart card entitlement."
           }
         }
       }
     },
-    "カードとの通信に失敗しました。もう一度かざしてください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Communication with the card failed. Please hold it again."
+    "タイムスタンプ時刻" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timestamp time"
           }
         }
       }
     },
-    "カードにアクセスできませんでした。カードを挿し直してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The card could not be accessed. Please reinsert it."
+    "タイムスタンプ時刻: %@ (JST)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timestamp time: %@ (JST)"
           }
         }
       }
     },
-    "カードに接続できませんでした。位置を調整してもう一度かざしてください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not connect to the card. Adjust its position and hold it again."
+    "ダミー署名で検証" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test with a dummy signature"
           }
         }
       }
     },
-    "カードの状態を確認できませんでした。もう一度お試しください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The card's status could not be checked. Please try again."
+    "チェック項目 (%lld件)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check items (%lld)"
           }
         }
       }
     },
-    "カードを待っています…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waiting for the card…"
+    "ネットワーク通信は一切行いません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No network communication whatsoever"
           }
         }
       }
     },
-    "カードを認識できませんでした。マイナンバーカードを iPhone にかざしてください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The card could not be recognized. Hold your My Number Card to the iPhone."
+    "ファイルを開いてPDFを選択します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens Files to choose a PDF"
           }
         }
       }
     },
-    "カードリーダー": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Card Reader"
+    "ファイルを開いて検証するPDFを選択します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens Files to choose a PDF to verify"
           }
         }
       }
     },
-    "カードリーダーが見つかりません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No card reader found"
+    "ファイル全体（最新の署名）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entire file (latest signature)"
           }
         }
       }
     },
-    "カードリーダーにカードが見つかりません。カードを挿入してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No card was found in the reader. Please insert your card."
+    "マイナンバーカードの署名用電子証明書で、選択したPDFに電子署名を行います。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected PDF will be digitally signed with the signature certificate on your My Number Card."
           }
         }
       }
     },
-    "カードリーダーのマイナンバーカードで署名します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signs with the My Number Card in the card reader"
+    "マイナンバーカードを iPhone にかざしてください…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold your My Number Card to the iPhone…"
           }
         }
       }
     },
-    "カードリーダーの一覧を更新します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Refreshes the card reader list"
+    "マイナンバーカードをiPhoneにかざして署名します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold your My Number Card to the iPhone to sign"
           }
         }
       }
     },
-    "キャンセル": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
+    "やめる" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
           }
         }
       }
     },
-    "シリアル番号": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Serial Number"
+    "リーダー: %@（カードあり）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reader: %@ (card present)"
           }
         }
       }
     },
-    "スマートカードサービスを利用できません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Smart card services are unavailable"
+    "リーダー: %@（カードなし）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reader: %@ (no card)"
           }
         }
       }
     },
-    "スマートカードサービスを利用できません。アプリのスマートカード権限を確認してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Smart card services are unavailable. Check the app's smart card entitlement."
+    "不明" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
           }
         }
       }
     },
-    "タイムスタンプ時刻": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Timestamp time"
+    "不適合" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fail"
           }
         }
       }
     },
-    "タイムスタンプ時刻: %@ (JST)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Timestamp time: %@ (JST)"
+    "他の認証局: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other certificate authority: %@"
           }
         }
       }
     },
-    "ダミー署名で検証": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Test with a dummy signature"
+    "住所" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Address"
           }
         }
       }
     },
-    "チェック項目 (%lld件)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Check items (%lld)"
+    "元のPDFは変更されていません。書き出されるのは新しく作成された署名済みのコピーです。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The original PDF is unchanged. What is exported is a newly created signed copy."
           }
         }
       }
     },
-    "ネットワーク通信は一切行いません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No network communication whatsoever"
+    "免責事項" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disclaimer"
           }
         }
       }
     },
-    "ファイルを開いてPDFを選択します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opens Files to choose a PDF"
+    "公的個人認証サービス（JPKI）の証明書" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JPKI (Japanese Public Key Infrastructure) certificate"
           }
         }
       }
     },
-    "ファイルを開いて検証するPDFを選択します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opens Files to choose a PDF to verify"
+    "再読み込み" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refresh"
           }
         }
       }
     },
-    "ファイル全体（最新の署名）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Entire file (latest signature)"
+    "最初からやり直す" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Over"
           }
         }
       }
     },
-    "マイナンバーカードの署名用電子証明書で、選択したPDFに電子署名を行います。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The selected PDF will be digitally signed with the signature certificate on your My Number Card."
+    "最後の1回の試行で署名を続行します。間違えるとカードがロックされます" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continues signing using the final attempt. A wrong PIN will lock the card"
           }
         }
       }
     },
-    "マイナンバーカードを iPhone にかざしてください…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hold your My Number Card to the iPhone…"
+    "最後の署名の後に文書が変更されています。署名は各署名時点の内容を保証します。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The document was modified after the last signature. Each signature covers the document as it was at signing time."
           }
         }
       }
     },
-    "マイナンバーカードをiPhoneにかざして署名します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hold your My Number Card to the iPhone to sign"
+    "最後の署名の後に文書が変更されています（署名は各署名時点の内容を保証します）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The document was modified after the last signature (each signature covers the document as it was at signing time)"
           }
         }
       }
     },
-    "リーダー: %@（カードあり）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reader: %@ (card present)"
+    "処理中…" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Working…"
           }
         }
       }
     },
-    "リーダー: %@（カードなし）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reader: %@ (no card)"
+    "出力" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export"
           }
         }
       }
     },
-    "不明": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unknown"
+    "別のPDFを選び直す" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a different PDF"
           }
         }
       }
     },
-    "不適合": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fail"
+    "各チェック項目の判定結果を表示します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shows the result of each check item"
           }
         }
       }
     },
-    "他の認証局: %@": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Other certificate authority: %@"
+    "同梱している JPKI ルート証明書" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bundled JPKI Root Certificates"
           }
         }
       }
     },
-    "住所": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Address"
+    "失効確認（CRL/OCSP）は行いません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revocation (CRL/OCSP) is not checked."
           }
         }
       }
     },
-    "元のPDFは変更されていません。書き出されるのは新しく作成された署名済みのコピーです。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The original PDF is unchanged. What is exported is a newly created signed copy."
+    "技術情報" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Technical Details"
           }
         }
       }
     },
-    "免責事項": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Disclaimer"
+    "文書タイムスタンプ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Document Timestamp"
           }
         }
       }
     },
-    "公的個人認証サービス（JPKI）の証明書": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "JPKI (Japanese Public Key Infrastructure) certificate"
+    "文書タイムスタンプ (RFC 3161)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Document timestamp (RFC 3161)"
           }
         }
       }
     },
-    "再読み込み": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Refresh"
+    "文書の完全性: 改ざんなし" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Document integrity: not altered"
           }
         }
       }
     },
-    "処理中…": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Working…"
+    "暗証番号・署名値・証明書情報は端末外に送信されません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your PIN, signature values, and certificate details never leave the device"
           }
         }
       }
     },
-    "出力": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Export"
+    "暗証番号がロックされています。市区町村の窓口で初期化してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The PIN is locked. Please have it reset at your municipal office."
           }
         }
       }
     },
-    "別のPDFを選び直す": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose a different PDF"
+    "暗証番号がロックされました。市区町村の窓口で初期化してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The PIN has been locked. Please have it reset at your municipal office."
           }
         }
       }
     },
-    "各チェック項目の判定結果を表示します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Shows the result of each check item"
-          }
-        }
-      }
-    },
-    "同梱している JPKI ルート証明書": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bundled JPKI Root Certificates"
-          }
-        }
-      }
-    },
-    "失効確認（CRL/OCSP）は行いません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Revocation (CRL/OCSP) is not checked."
-          }
-        }
-      }
-    },
-    "技術情報": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Technical Details"
-          }
-        }
-      }
-    },
-    "文書の完全性: 改ざんなし": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Document integrity: not altered"
-          }
-        }
-      }
-    },
-    "文書タイムスタンプ": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Document Timestamp"
-          }
-        }
-      }
-    },
-    "文書タイムスタンプ (RFC 3161)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Document timestamp (RFC 3161)"
-          }
-        }
-      }
-    },
-    "暗証番号がロックされています。市区町村の窓口で初期化してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The PIN is locked. Please have it reset at your municipal office."
-          }
-        }
-      }
-    },
-    "暗証番号がロックされました。市区町村の窓口で初期化してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The PIN has been locked. Please have it reset at your municipal office."
-          }
-        }
-      }
-    },
-    "暗証番号が違います（残り%lld回）。5回連続で間違えるとロックされ、市区町村窓口での初期化が必要になります。": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Incorrect PIN (%lld attempt remaining). Five consecutive wrong entries will lock the card, which must then be reset at your municipal office."
+    "暗証番号が違います（残り%lld回）。5回連続で間違えるとロックされ、市区町村窓口での初期化が必要になります。" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Incorrect PIN (%lld attempt remaining). Five consecutive wrong entries will lock the card, which must then be reset at your municipal office."
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Incorrect PIN (%lld attempts remaining). Five consecutive wrong entries will lock the card, which must then be reset at your municipal office."
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Incorrect PIN (%lld attempts remaining). Five consecutive wrong entries will lock the card, which must then be reset at your municipal office."
                 }
               }
             }
@@ -953,61 +1007,61 @@
         }
       }
     },
-    "暗証番号の残り試行回数が1回です。次に間違えるとカードがロックされ、市区町村窓口での初期化が必要になります。続行しますか？": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Only one PIN attempt remains. One more wrong entry will lock the card, which must then be reset at your municipal office. Continue?"
+    "暗証番号の残り試行回数が1回です。次に間違えるとカードがロックされ、市区町村窓口での初期化が必要になります。続行しますか？" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Only one PIN attempt remains. One more wrong entry will lock the card, which must then be reset at your municipal office. Continue?"
           }
         }
       }
     },
-    "暗証番号の残り試行回数が1回のため中断しました。暗証番号をよく確認してからやり直してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Stopped because only one PIN attempt remains. Double-check your PIN before trying again."
+    "暗証番号の残り試行回数が1回のため中断しました。暗証番号をよく確認してからやり直してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stopped because only one PIN attempt remains. Double-check your PIN before trying again."
           }
         }
       }
     },
-    "暗証番号を5回連続で間違えるとカードがロックされ、市区町村窓口での初期化が必要になります。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Entering the wrong PIN five times in a row locks the card, which must then be reset at your municipal office."
+    "暗証番号を5回連続で間違えるとカードがロックされ、市区町村窓口での初期化が必要になります。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entering the wrong PIN five times in a row locks the card, which must then be reset at your municipal office."
           }
         }
       }
     },
-    "暗証番号を5回連続で間違えるとカードがロックされます。ロックされた場合は市区町村窓口での初期化が必要です。入力した暗証番号は保存されません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Entering the wrong PIN five times in a row locks the card; a locked card must be reset at your municipal office. The PIN you enter is never stored."
+    "暗証番号を5回連続で間違えるとカードがロックされます。ロックされた場合は市区町村窓口での初期化が必要です。入力した暗証番号は保存されません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entering the wrong PIN five times in a row locks the card; a locked card must be reset at your municipal office. The PIN you enter is never stored."
           }
         }
       }
     },
-    "暗証番号を確認しています…（残り%lld回）": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Verifying the PIN… (%lld attempt remaining)"
+    "暗証番号を確認しています…（残り%lld回）" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Verifying the PIN… (%lld attempt remaining)"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Verifying the PIN… (%lld attempts remaining)"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Verifying the PIN… (%lld attempts remaining)"
                 }
               }
             }
@@ -1015,311 +1069,231 @@
         }
       }
     },
-    "暗証番号を確認できませんでした。もう一度お試しください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The PIN could not be verified. Please try again."
+    "暗証番号を確認できませんでした。もう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The PIN could not be verified. Please try again."
           }
         }
       }
     },
-    "暗証番号・署名値・証明書情報は端末外に送信されません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your PIN, signature values, and certificate details never leave the device"
+    "有効期間" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valid Period"
           }
         }
       }
     },
-    "最初からやり直す": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Start Over"
+    "本アプリの利用は自己責任で行ってください。作者は利用により生じたいかなる損害についても責任を負いません。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use this app at your own risk. The authors accept no liability for any damages arising from its use."
           }
         }
       }
     },
-    "最後の1回の試行で署名を続行します。間違えるとカードがロックされます": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continues signing using the final attempt. A wrong PIN will lock the card"
+    "本アプリは電子署名を「生成」するツールであり、署名の検証サービスではありません。生成した署名付きPDFの提出先での受理可否は、利用者ご自身で提出先の要件をご確認ください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app is a tool for creating digital signatures, not a verification service. Whether a signed PDF is accepted by its recipient depends on the recipient's requirements — please check them yourself."
           }
         }
       }
     },
-    "最後の署名の後に文書が変更されています。署名は各署名時点の内容を保証します。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The document was modified after the last signature. Each signature covers the document as it was at signing time."
+    "検査した署名数" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signatures Checked"
           }
         }
       }
     },
-    "最後の署名の後に文書が変更されています（署名は各署名時点の内容を保証します）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The document was modified after the last signature (each signature covers the document as it was at signing time)"
+    "検証" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verify"
           }
         }
       }
     },
-    "有効期間": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Valid Period"
+    "検証する" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verify"
           }
         }
       }
     },
-    "本アプリの利用は自己責任で行ってください。作者は利用により生じたいかなる損害についても責任を負いません。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Use this app at your own risk. The authors accept no liability for any damages arising from its use."
+    "検証するPDFを選択してください" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a PDF to verify"
           }
         }
       }
     },
-    "本アプリは電子署名を「生成」するツールであり、署名の検証サービスではありません。生成した署名付きPDFの提出先での受理可否は、利用者ご自身で提出先の要件をご確認ください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This app is a tool for creating digital signatures, not a verification service. Whether a signed PDF is accepted by its recipient depends on the recipient's requirements — please check them yourself."
+    "検証結果" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verification Result"
           }
         }
       }
     },
-    "検査した署名数": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signatures Checked"
+    "残り試行回数が1回です" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Only One Attempt Remaining"
           }
         }
       }
     },
-    "検証": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verify"
+    "氏名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
           }
         }
       }
     },
-    "検証する": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verify"
+    "発行元を確認できません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The issuer could not be verified"
           }
         }
       }
     },
-    "検証するPDFを選択してください": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Select a PDF to verify"
+    "発行者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Issuer"
           }
         }
       }
     },
-    "検証結果": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verification Result"
+    "登記オンライン申請には提出できない形式です" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The format cannot be submitted to MOJ registry online applications"
           }
         }
       }
     },
-    "残り試行回数が1回です": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Only One Attempt Remaining"
+    "登記オンライン申請に提出可能な形式です" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The format can be submitted to MOJ registry online applications"
           }
         }
       }
     },
-    "氏名": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Name"
+    "登記適合チェック" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registry format check"
           }
         }
       }
     },
-    "発行元を確認できません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The issuer could not be verified"
+    "直接署名方式 (signedAttrs なし)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Direct signature (no signedAttrs)"
           }
         }
       }
     },
-    "発行者": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Issuer"
+    "種別" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
           }
         }
       }
     },
-    "登記オンライン申請には提出できない形式です": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The format cannot be submitted to MOJ registry online applications"
+    "続けて次の人が署名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add next signer"
           }
         }
       }
     },
-    "登記オンライン申請に提出可能な形式です": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The format can be submitted to MOJ registry online applications"
+    "続行する" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
           }
         }
       }
     },
-    "登記適合チェック": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Registry format check"
+    "署名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign"
           }
         }
       }
     },
-    "直接署名方式 (signedAttrs なし)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Direct signature (no signedAttrs)"
-          }
-        }
-      }
-    },
-    "種別": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Type"
-          }
-        }
-      }
-    },
-    "続けて次の人が署名": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add next signer"
-          }
-        }
-      }
-    },
-    "続行する": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continue"
-          }
-        }
-      }
-    },
-    "署名": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sign"
-          }
-        }
-      }
-    },
-    "署名 %lld / %lld": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signature %1$lld of %2$lld"
-          }
-        }
-      }
-    },
-    "署名 %lld の詳細": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signature %lld Details"
-          }
-        }
-      }
-    },
-    "署名 %lld の詳細を表示": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show details for signature %lld"
-          }
-        }
-      }
-    },
-    "署名 (%lld件)": {
-      "localizations": {
-        "en": {
-          "variations": {
-            "plural": {
-              "one": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Signature (%lld)"
+    "署名 (%lld件)" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Signature (%lld)"
                 }
               },
-              "other": {
-                "stringUnit": {
-                  "state": "translated",
-                  "value": "Signatures (%lld)"
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Signatures (%lld)"
                 }
               }
             }
@@ -1327,501 +1301,532 @@
         }
       }
     },
-    "署名が完了しました": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signing Complete"
+    "署名 %lld / %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature %1$lld of %2$lld"
           }
         }
       }
     },
-    "署名しています…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signing…"
+    "署名 %lld の詳細" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature %lld Details"
           }
         }
       }
     },
-    "署名する": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sign"
+    "署名 %lld の詳細を表示" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show details for signature %lld"
           }
         }
       }
     },
-    "署名するPDFを選択してください": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Select a PDF to sign"
+    "署名が完了しました" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing Complete"
           }
         }
       }
     },
-    "署名に失敗しました。もう一度お試しください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signing failed. Please try again."
+    "署名しています…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing…"
           }
         }
       }
     },
-    "署名をタップすると証明書の詳細を表示します。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap a signature to see certificate details."
+    "署名する" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign"
           }
         }
       }
     },
-    "署名を検証する": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verify Signatures"
+    "署名するPDFを選択してください" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a PDF to sign"
           }
         }
       }
     },
-    "署名モードと検証モードを切り替えます": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Switches between signing and verification modes"
+    "署名に失敗しました。もう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing failed. Please try again."
           }
         }
       }
     },
-    "署名値: 有効": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signature value: valid"
+    "署名モードと検証モードを切り替えます" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switches between signing and verification modes"
           }
         }
       }
     },
-    "署名処理中…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signing…"
+    "署名をタップすると証明書の詳細を表示します。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap a signature to see certificate details."
           }
         }
       }
     },
-    "署名属性方式 (signedAttrs あり)": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signed attributes (signedAttrs present)"
+    "署名を検証する" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verify Signatures"
           }
         }
       }
     },
-    "署名方式": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signature Method"
+    "署名値: 有効" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature value: valid"
           }
         }
       }
     },
-    "署名時点の版まで（後から追加署名あり）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Up to its own revision (more signatures were added later)"
+    "署名処理中…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing…"
           }
         }
       }
     },
-    "署名検証で「公的個人認証サービス（JPKI）」と判定する際は、以下の J-LIS 公表の署名用CA（ルート）証明書との照合を行います。SHA-256 フィンガープリント:": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A signature is classified as “JPKI (Japanese Public Key Infrastructure)” by matching against the following J-LIS-published signature CA (root) certificates. SHA-256 fingerprints:"
+    "署名属性方式 (signedAttrs あり)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signed attributes (signedAttrs present)"
           }
         }
       }
     },
-    "署名済みPDFが登記オンライン申請の形式要件に適合するかを確認します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Checks whether the signed PDF meets the format requirements for MOJ registry online applications"
+    "署名方式" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature Method"
           }
         }
       }
     },
-    "署名済みPDFの署名値と改ざんの有無をその場で確認します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Checks the signed PDF's signature values and integrity on the spot"
+    "署名時点の版まで（後から追加署名あり）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Up to its own revision (more signatures were added later)"
           }
         }
       }
     },
-    "署名済みPDFをFilesに保存します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Saves the signed PDF to Files"
+    "署名検証で「公的個人認証サービス（JPKI）」と判定する際は、以下の J-LIS 公表の署名用CA（ルート）証明書との照合を行います。SHA-256 フィンガープリント:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A signature is classified as “JPKI (Japanese Public Key Infrastructure)” by matching against the following J-LIS-published signature CA (root) certificates. SHA-256 fingerprints:"
           }
         }
       }
     },
-    "署名済みPDFを他のアプリと共有します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Shares the signed PDF with other apps"
+    "署名済みPDFが登記オンライン申請の形式要件に適合するかを確認します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checks whether the signed PDF meets the format requirements for MOJ registry online applications"
           }
         }
       }
     },
-    "署名済みPDFを読み込み直して、次の署名者の署名を追加します。既存の署名は保持されます": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reloads the signed PDF so the next signer can add their signature. Existing signatures are preserved"
+    "署名済みPDFの署名値と改ざんの有無をその場で確認します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checks the signed PDF's signature values and integrity on the spot"
           }
         }
       }
     },
-    "署名用PIN": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signature PIN"
+    "署名済みPDFをFilesに保存します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saves the signed PDF to Files"
           }
         }
       }
     },
-    "署名用PINは6〜16桁の英数字で入力してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter a signature PIN of 6–16 alphanumeric characters."
+    "署名済みPDFを他のアプリと共有します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shares the signed PDF with other apps"
           }
         }
       }
     },
-    "署名用PIN（英数字6〜16桁）": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signature PIN (6–16 alphanumeric characters)"
+    "署名済みPDFを読み込み直して、次の署名者の署名を追加します。既存の署名は保持されます" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reloads the signed PDF so the next signer can add their signature. Existing signatures are preserved"
           }
         }
       }
     },
-    "署名用パスワードは英数字6〜16桁で入力してください。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter a signature PIN of 6–16 alphanumeric characters."
+    "署名用PIN" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature PIN"
           }
         }
       }
     },
-    "署名用電子証明書の有効期間が切れています。マイナンバーカードの更新が必要です。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The signature certificate has expired. Your My Number Card needs to be renewed."
+    "署名用PIN（英数字6〜16桁）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature PIN (6–16 alphanumeric characters)"
           }
         }
       }
     },
-    "署名結果": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signing Result"
+    "署名用PINは6〜16桁の英数字で入力してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a signature PIN of 6–16 alphanumeric characters."
           }
         }
       }
     },
-    "署名者": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signer"
+    "署名用パスワードは英数字6〜16桁で入力してください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a signature PIN of 6–16 alphanumeric characters."
           }
         }
       }
     },
-    "署名者証明書": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signer Certificate"
+    "署名用電子証明書の有効期間が切れています。マイナンバーカードの更新が必要です。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The signature certificate has expired. Your My Number Card needs to be renewed."
           }
         }
       }
     },
-    "自己署名証明書（テスト用） — 公的な署名ではありません": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Self-signed certificate (test use) — not an official signature"
+    "署名結果" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing Result"
           }
         }
       }
     },
-    "表示モード": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mode"
+    "署名者" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signer"
           }
         }
       }
     },
-    "被覆範囲": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Coverage"
+    "署名者証明書" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signer Certificate"
           }
         }
       }
     },
-    "証明書": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Certificate"
+    "自己署名証明書（テスト用） — 公的な署名ではありません" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Self-signed certificate (test use) — not an official signature"
           }
         }
       }
     },
-    "証明書CN": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Certificate CN"
+    "表示モード" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode"
           }
         }
       }
     },
-    "証明書と署名の技術情報を表示します": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Shows certificate and technical signature details"
+    "被覆範囲" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coverage"
           }
         }
       }
     },
-    "証明書の内容を解釈できませんでした": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The certificate could not be parsed"
+    "証明書" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certificate"
           }
         }
       }
     },
-    "証明書の失効確認（CRL/OCSP）は行っていません。正式な有効性は提出先システムの検証に依ります。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Certificate revocation (CRL/OCSP) is not checked. Formal validity depends on verification by the receiving system."
+    "証明書CN" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certificate CN"
           }
         }
       }
     },
-    "証明書を読み取っています…": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reading the certificate…"
+    "証明書と署名の技術情報を表示します" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shows certificate and technical signature details"
           }
         }
       }
     },
-    "証明書有効期間": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Certificate Validity"
+    "証明書の内容を解釈できませんでした" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The certificate could not be parsed"
           }
         }
       }
     },
-    "詳細を表示": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show Details"
+    "証明書の失効確認（CRL/OCSP）は行っていません。正式な有効性は提出先システムの検証に依ります。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certificate revocation (CRL/OCSP) is not checked. Formal validity depends on verification by the receiving system."
           }
         }
       }
     },
-    "読み取りをキャンセルしました。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reading was canceled."
+    "証明書を読み取っています…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reading the certificate…"
           }
         }
       }
     },
-    "警告": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Warning"
+    "証明書有効期間" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certificate Validity"
           }
         }
       }
     },
-    "適合": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pass"
+    "詳細を表示" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Details"
           }
         }
       }
     },
-    "選択したファイルはPDFとして読み取れませんでした。": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The selected file could not be read as a PDF."
+    "読み取りをキャンセルしました。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reading was canceled."
           }
         }
       }
     },
-    "閉じる": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close"
+    "警告" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warning"
           }
         }
       }
     },
-    "開発検証用の一時鍵で署名しています…": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signing with a temporary development key…"
+    "適合" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pass"
           }
         }
       }
     },
-    "開発検証用の氏名": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Signer name (development testing)"
+    "選択したファイルはPDFとして読み取れませんでした。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The selected file could not be read as a PDF."
           }
         }
       }
     },
-    "開発検証用の氏名を入力してください。": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enter a signer name for development testing."
+    "閉じる" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
           }
         }
       }
     },
-    "開発検証用・ダミー署名": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Development Testing — Dummy Signature"
+    "開発検証用・ダミー署名" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Development Testing — Dummy Signature"
           }
         }
       }
     },
-    "開発検証用署名に失敗しました: %@": {
-      "extractionState": "stale",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Development test signing failed: %@"
+    "開発検証用の一時鍵で署名しています…" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signing with a temporary development key…"
           }
         }
       }
     },
-    "電子署名": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Digital signature"
+    "開発検証用の氏名" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signer name (development testing)"
+          }
+        }
+      }
+    },
+    "開発検証用の氏名を入力してください。" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a signer name for development testing."
+          }
+        }
+      }
+    },
+    "開発検証用署名に失敗しました: %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Development test signing failed: %@"
+          }
+        }
+      }
+    },
+    "電子署名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digital signature"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
