@@ -1,0 +1,2 @@
+app_identifier("biz.geekproject.JPKILocalSignerApp")
+team_id("9446MDN2US") # Apple Developer Program team (paid) used for signing

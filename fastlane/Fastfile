@@ -1,0 +1,72 @@
+require "base64"
+require "shellwords"
+require "tmpdir"
+
+default_platform(:ios)
+
+PROJECT = "JPKILocalSignerApp.xcodeproj"
+SCHEME = "JPKILocalSignerApp"
+
+platform :ios do
+  # gym/xcodebuild need a full Xcode. On machines whose `xcode-select` points
+  # at the Command Line Tools, aim DEVELOPER_DIR at Xcode so `fastlane beta`
+  # works without a wrapper. Skipped in CI (setup-xcode selects a real Xcode,
+  # so xcode-select never reports CommandLineTools) and when already set.
+  before_all do
+    if ENV["DEVELOPER_DIR"].nil? && `xcode-select -p`.include?("CommandLineTools")
+      xcode = "/Applications/Xcode.app/Contents/Developer"
+      ENV["DEVELOPER_DIR"] = xcode if File.directory?(xcode)
+    end
+  end
+
+  desc "Build a Release archive and upload it to TestFlight"
+  lane :beta do
+    key_id = ENV.fetch("ASC_KEY_ID")
+    issuer_id = ENV.fetch("ASC_ISSUER_ID")
+
+    # Materialize the base64-encoded .p8 secret to a file: xcodebuild needs its
+    # path for cloud signing, and app_store_connect_api_key needs it for upload.
+    key_path = File.join(Dir.tmpdir, "AuthKey_#{key_id}.p8")
+    File.write(key_path, Base64.decode64(ENV.fetch("ASC_KEY_P8")))
+
+    api_key = app_store_connect_api_key(
+      key_id: key_id,
+      issuer_id: issuer_id,
+      key_filepath: key_path
+    )
+
+    # TestFlight rejects a build number it has seen before. Use the CI run
+    # number when present, otherwise a timestamp for local runs. The 10-digit
+    # yyMMddHHmm form stays under the per-field CFBundleVersion limit (2^32-1).
+    build_number = ENV["GITHUB_RUN_NUMBER"] || Time.now.strftime("%y%m%d%H%M")
+
+    # Cloud signing: -allowProvisioningUpdates plus the API key let xcodebuild
+    # create/use the Apple Distribution cert and App Store profile with no certs
+    # checked into the repo. The auth key MUST reach both the archive and the
+    # export step (gym forwards xcargs to each) — without it, export fails with
+    # "no provisioning profile mapping". The key needs the App Manager role.
+    #
+    # CURRENT_PROJECT_VERSION is injected as a build setting (not agvtool) so the
+    # project needs no Apple Generic Versioning and the pbxproj is never mutated;
+    # GENERATE_INFOPLIST_FILE = YES copies it into CFBundleVersion.
+    build_app(
+      project: PROJECT,
+      scheme: SCHEME,
+      configuration: "Release",
+      export_method: "app-store",
+      xcargs: [
+        "-allowProvisioningUpdates",
+        "-authenticationKeyPath #{key_path.shellescape}",
+        "-authenticationKeyID #{key_id}",
+        "-authenticationKeyIssuerID #{issuer_id}",
+        "CURRENT_PROJECT_VERSION=#{build_number}"
+      ].join(" "),
+      export_options: { signingStyle: "automatic" }
+    )
+
+    upload_to_testflight(
+      api_key: api_key,
+      skip_waiting_for_build_processing: true
+    )
+  end
+end
