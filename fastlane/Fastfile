@@ -17,6 +17,14 @@ platform :ios do
       xcode = "/Applications/Xcode.app/Contents/Developer"
       ENV["DEVELOPER_DIR"] = xcode if File.directory?(xcode)
     end
+
+    # Xcode's IPA packaging (IDEDistributionCreateIPAStep) shells out to bare
+    # `rsync`. A Homebrew rsync (3.4.x) on PATH rejects Xcode's arguments and
+    # fails the export with "Copy failed", so put the system rsync at /usr/bin
+    # first. No-op in CI, where /usr/bin/rsync is already the one on PATH.
+    if File.exist?("/opt/homebrew/bin/rsync") || File.exist?("/usr/local/bin/rsync")
+      ENV["PATH"] = "/usr/bin:#{ENV['PATH']}"
+    end
   end
 
   desc "Build a Release archive and upload it to TestFlight"
