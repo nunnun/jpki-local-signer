@@ -21,3 +21,6 @@ __pycache__/
 .pytest_cache/
 tmp/
 jpki/
+
+# Gemfile.lock is intentionally not committed (see .github/workflows/testflight.yml)
+Gemfile.lock
