@@ -13,9 +13,11 @@ concurrency:
 
 jobs:
   beta:
-    # Needs a macOS image whose Xcode ships the iOS SDK the project builds
-    # against. Bump the runner image / Xcode version as Apple releases them.
-    runs-on: macos-15
+    # macos-latest avoids the frequently-saturated pinned macos-15 pool.
+    # setup-xcode (latest-stable) picks the newest Xcode on whatever image
+    # this resolves to; pin runs-on / xcode-version if a build needs a
+    # specific SDK.
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
 
