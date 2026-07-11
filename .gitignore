@@ -5,6 +5,7 @@ DerivedData/
 # fastlane / distribution build artifacts
 *.ipa
 *.xcarchive
+*.app.dSYM.zip
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/test_output/

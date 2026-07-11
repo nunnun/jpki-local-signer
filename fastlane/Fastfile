@@ -43,6 +43,23 @@ platform :ios do
       key_filepath: key_path
     )
 
+    # CI signing: import the existing Apple Distribution cert from a base64 .p12
+    # secret into a temporary keychain so cloud signing REUSES it instead of
+    # minting a new distribution certificate every run (Apple caps those at ~2).
+    # Only runs in CI where the secret is set; locally the login keychain's cert
+    # is used unchanged.
+    if ENV["DIST_CERT_P12"] && !ENV["DIST_CERT_P12"].empty?
+      setup_ci
+      cert_path = File.join(Dir.tmpdir, "dist_cert.p12")
+      File.write(cert_path, Base64.decode64(ENV.fetch("DIST_CERT_P12")))
+      import_certificate(
+        certificate_path: cert_path,
+        certificate_password: ENV["DIST_CERT_PASSWORD"].to_s,
+        keychain_name: ENV["MATCH_KEYCHAIN_NAME"] || "fastlane_tmp_keychain",
+        keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"].to_s
+      )
+    end
+
     # TestFlight rejects a build number it has seen before. Use the CI run
     # number when present, otherwise a timestamp for local runs. The 10-digit
     # yyMMddHHmm form stays under the per-field CFBundleVersion limit (2^32-1).
@@ -69,7 +86,8 @@ platform :ios do
         "-authenticationKeyIssuerID #{issuer_id}",
         "CURRENT_PROJECT_VERSION=#{build_number}"
       ].join(" "),
-      export_options: { signingStyle: "automatic" }
+      export_options: { signingStyle: "automatic" },
+      output_directory: "build" # keep the .ipa/.dSYM out of the repo root
     )
 
     upload_to_testflight(
