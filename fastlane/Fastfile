@@ -60,10 +60,12 @@ platform :ios do
       )
     end
 
-    # TestFlight rejects a build number it has seen before. Use the CI run
-    # number when present, otherwise a timestamp for local runs. The 10-digit
-    # yyMMddHHmm form stays under the per-field CFBundleVersion limit (2^32-1).
-    build_number = ENV["GITHUB_RUN_NUMBER"] || Time.now.strftime("%y%m%d%H%M")
+    # TestFlight requires a build number strictly higher than any already
+    # uploaded for this version. A 10-digit yyMMddHHmm timestamp is monotonic
+    # and stays under the per-field CFBundleVersion limit (2^32-1). Used for
+    # both local and CI runs so the two schemes never collide (GITHUB_RUN_NUMBER
+    # would be a small integer, lower than an existing timestamp, and rejected).
+    build_number = Time.now.strftime("%y%m%d%H%M")
 
     # Cloud signing: -allowProvisioningUpdates plus the API key let xcodebuild
     # create/use the Apple Distribution cert and App Store profile with no certs
