@@ -1,0 +1,17 @@
+JPKI Local Signer digitally signs PDF documents with Japan's My Number Card (マイナンバーカード), entirely on your device.
+
+Hold your card to your iPhone (NFC) and enter your signing PIN, and the app embeds a detached CMS/PKCS#7 signature (adbe.pkcs7.detached) into your PDF — the format accepted by Japan's registry e-filing system (登記・供託オンライン申請システム). The card's private key never leaves the card: the signature is computed on-card and only the signature value is returned.
+
+The app can also verify signed PDFs offline — checking the signature value, document integrity, and certificate-chain trust (JPKI root certificates are bundled) — and co-sign documents with multiple signers.
+
+Privacy by design:
+• No servers, no cloud, no accounts.
+• No network access at all — no networking APIs are linked into the app.
+• Your PIN, hashes, and signature values are never logged or saved.
+• No analytics, no tracking, no ads.
+
+Requirements: an NFC-capable iPhone (iOS 17+) and a physical My Number Card holding a valid signing certificate. Verification works without a card.
+
+Note: This app generates signatures; it does not perform revocation checks (CRL/OCSP). Whether a signed PDF is accepted by a given filing system is the user's responsibility to confirm.
+
+Open source (Apache-2.0): https://github.com/nunnun/jpki-local-signer

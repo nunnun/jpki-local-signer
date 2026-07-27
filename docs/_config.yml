@@ -1,0 +1,7 @@
+# GitHub Pages (source: main / docs). Publishes the privacy policy at a stable
+# URL for the App Store "Privacy Policy URL" field. Only pages carrying YAML
+# front matter (currently PRIVACY.md and index.md) are themed; the other docs
+# are served as-is.
+title: JPKI Local Signer
+description: On-device PDF signing and verification with Japan's My Number Card (マイナンバーカード).
+theme: jekyll-theme-cayman

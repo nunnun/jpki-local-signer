@@ -1,3 +1,9 @@
+---
+layout: default
+title: "プライバシーポリシー / Privacy Policy"
+permalink: /privacy/
+---
+
 # プライバシーポリシー / Privacy Policy
 
 **JPKI Local Signer**

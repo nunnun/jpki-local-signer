@@ -1,0 +1,6 @@
+Initial public release.
+
+• On-device PDF signing with your My Number Card over NFC
+• Offline verification of signed PDFs (no card needed)
+• Co-signing (multiple signers)
+• No network access, no data collection

@@ -1,0 +1,1 @@
+PDF,signature,My Number Card,JPKI,eSign,digital signature,NFC,offline,verify,登記

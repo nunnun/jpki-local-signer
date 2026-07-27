@@ -1,0 +1,21 @@
+This app's signing feature requires a physical Japanese My Number Card
+(マイナンバーカード) and NFC, which a reviewer typically cannot test. The card's
+private key never leaves the card: the app runs COMPUTE DIGITAL SIGNATURE on-card
+and embeds only the resulting signature into a PDF (adbe.pkcs7.detached, for
+Japan's government registry e-filing system, 登記・供託オンライン申請システム).
+
+No card needed to review the app: use the Verify tab — open a signed PDF and the
+app validates the signature value, document integrity, and certificate chain
+fully offline. A sample signed PDF is attached to this submission.
+
+The app has no sign-in / account, and makes no network requests (it links no
+networking APIs; this is enforced in CI by scripts/check-no-network.sh). It
+collects no data (see the bundled privacy manifest, "No Data Collected").
+
+The NFC entitlement declares the JPKI application identifier (AID
+D392F000260100000001), which is Japan's public identity applet — not a payment
+or transit AID.
+
+This app generates signatures on the user's own documents with the user's own
+card; it is not a certification/verification service and is outside the scope of
+Japan's Act on Electronic Signatures (article 17 accreditation).
