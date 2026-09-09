@@ -22,9 +22,11 @@ App Store Connect に直接入力する（フィードバック用メールア�
 `https://github.com/nunnun/jpki-local-signer`
 
 ### Privacy Policy URL
-データを一切収集せず通信もしないため簡潔なポリシーで足りる。リポジトリに
-`docs/PRIVACY.md` を置いてその URL を使うか、既存の説明ページを指定する。
-（未作成なら別途用意する。）
+`https://nunnun.github.io/jpki-local-signer/privacy/`
+
+データを一切収集せず通信もしないため簡潔なポリシーで足りる。ポリシー本文は
+[`docs/PRIVACY.md`](PRIVACY.md)、これを GitHub Pages（`main` / `docs` ソース）で
+公開した上記 URL を TestFlight / App Store の Privacy Policy URL に使用する。
 
 ---
 

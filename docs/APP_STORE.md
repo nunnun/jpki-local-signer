@@ -14,6 +14,9 @@
     使わない）。
 - **App Store Connect のプライバシー「栄養ラベル」**: 「データを収集しない
   （No Data Collected）」を選択。ネットワーク通信がないため送信も追跡もない。
+- **プライバシーポリシー URL**: [`docs/PRIVACY.md`](PRIVACY.md) を GitHub Pages
+  （`main` / `docs` ソース）で公開し、`https://nunnun.github.io/jpki-local-signer/privacy/`
+  を掲載メタデータの `privacy_url`（`fastlane/metadata/ja` / `en-US`）に使用。
 
 ## 輸出コンプライアンス（暗号）
 
@@ -62,11 +65,62 @@
   自身が確認する前提。アプリ内「登記適合チェック」は形式要件の目安であり
   受理を保証しない。
 
+## 一般公開（App Store）提出フロー
+
+TestFlight 配布（`fastlane beta`）と同じビルド基盤・同じ App Store Connect API
+キーを使い、**TestFlight に上げたビルドをそのまま App Store に昇格**する。掲載
+情報は [`fastlane/metadata/`](../fastlane/metadata)（deliver 形式・`ja` / `en-US`）
+にテキストで版管理している。
+
+### fastlane レーン
+
+| レーン | 用途 |
+|---|---|
+| `fastlane beta` | Release ビルドを作成し TestFlight へアップロード（ビルド番号 `yyMMddHHmm` をログ出力） |
+| `fastlane upload_metadata` | 掲載文面のみ反映（バイナリ・スクショ・審査提出なし・冪等）。コピー調整の反復用 |
+| `fastlane release build_number:<n>` | TestFlight の当該ビルドを昇格。メタデータ同期 + 審査提出。`submit:false` でメタデータのみのドライラン、`with_screenshots:true` で `fastlane/screenshots` も反映 |
+
+CI からは [`.github/workflows/appstore.yml`](../.github/workflows/appstore.yml)
+（`workflow_dispatch` 限定）で `fastlane release` を手動起動できる。`v*` タグには
+紐付けていない（タグ push で審査自動提出しないため）。
+
+### スクリーンショット
+
+署名フローは Core NFC / 実カードが必要でシミュレータでは完了できないため、**カード
+不要の画面**を撮る（検証結果・署名詳細・登記適合チェック・「このアプリについて」・
+取り込み/プレビュー/PIN 入力の NFC 直前まで）。`swift run TestSigner out.pdf テスト署名者 <入力PDF>`
+で生成したサンプル署名 PDF を検証タブで開いて撮影する。`fastlane/screenshots/<locale>/`
+（`ja` / `en-US`）に配置。必須サイズ: iPhone 6.9"（例 16 Pro Max）、iPad 13"（iPad 対応のため）。
+
+### 審査対策
+
+主要機能（署名）は実物のマイナンバーカードが必要で審査担当者が試せない。対策として
+[`fastlane/metadata/review_information/notes.txt`](../fastlane/metadata/review_information/notes.txt)
+に「Verify タブはカード不要で検証可能」「サンプル署名 PDF を添付」等を英語で記載済み。
+**サンプル署名 PDF の添付は deliver に項目がなく手動**（App Store Connect → App Review
+Information → Attachment）。`swift run TestSigner` で生成して添付する。
+
+## App Store Connect 上の手動作業（自動化不可）
+
+`fastlane/metadata` で管理できず、App Store Connect の UI / API で設定する項目:
+
+- [ ] アプリレコード作成（Bundle ID `biz.geekproject.JPKILocalSignerApp` / SKU / 主要言語 = 日本語）
+- [ ] App Privacy「栄養ラベル」=「データを収集しない（No Data Collected）」
+- [ ] 年齢レーティング質問票
+- [ ] 価格 = 無料 / 配信地域
+- [ ] App Review Information にサンプル署名 PDF を添付
+- [ ] `fastlane/metadata/review_information/` の連絡先（氏名・電話・メール）を実値に差し替え（現状プレースホルダ）
+- [ ] `fastlane/metadata/copyright.txt` の権利者表記を確認
+- [ ] GitHub リポジトリ設定で Pages を `main` / `docs` に有効化（プライバシーポリシー URL）
+- [ ] 審査通過後に「Release this version」を手動で押下（`automatic_release: false`）
+
 ## リリース前チェック
 
+- [ ] `MARKETING_VERSION` が公開版（例 `1.0.0`）
 - [ ] `swift test` 全パス、iOS / macOS 両ビルド成功
 - [ ] `./scripts/check-no-network.sh` パス
-- [ ] スクリーンショット（署名・検証・登記適合チェック）
-- [ ] プライバシー栄養ラベル =「データを収集しない」
+- [ ] スクリーンショット（検証・登記適合チェック・カード不要 UI）を `fastlane/screenshots` に配置
+- [ ] `fastlane/metadata` の文字数・カテゴリを precheck で検証（`fastlane release submit:false` のドライラン）
+- [ ] プライバシー栄養ラベル =「データを収集しない」／プライバシーポリシー URL が到達可能
 - [ ] 輸出コンプライアンス =「適用除外」
-- [ ] macOS: 公証（Developer ID の場合）
+- [ ] macOS: 公証（Developer ID の場合。Mac App Store は今回のスコープ外）

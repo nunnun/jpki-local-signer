@@ -1,0 +1,1 @@
+マイナンバーカード,PDF,電子署名,JPKI,NFC,署名,検証,登記,オフライン,adbe.pkcs7.detached
