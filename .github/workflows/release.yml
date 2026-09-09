@@ -62,14 +62,17 @@ jobs:
         run: |
           set -euxo pipefail
           printf '%s\n' \
-            "JPKI Local Signer ${GITHUB_REF_NAME} — macOS preview build" \
+            "JPKI Local Signer ${GITHUB_REF_NAME}" \
             "" \
-            "USB PC/SC 対応 IC カードリーダーでマイナンバーカード署名、および署名検証を行う macOS アプリのプレビュービルドです。" \
+            "マイナンバーカードで PDF に端末内完結の電子署名・検証を行うアプリです。ネットワーク通信なし・データ収集なし・全 OSS（Apache-2.0）。" \
+            "" \
+            "**iOS**: App Store で配布しています（NFC 搭載 iPhone / iOS 17 以降）。" \
+            "" \
+            "**macOS**（この Release に添付の .dmg）: USB PC/SC 対応 IC カードリーダーでカード署名・検証を行う macOS アプリ。" \
             "" \
             "- **未署名・未 notarize** です。Gatekeeper が初回起動をブロックした場合は、アプリを右クリック →「開く」、または隔離属性を外してください:" \
             "  xattr -dr com.apple.quarantine /Applications/JPKILocalSignerApp.app" \
-            "- 署名・検証にはカードリーダーの接続が必要です。" \
-            "- iOS 版はソースからビルドしてください（各自の Apple Developer チームでの署名が必要）。" \
+            "- 署名にはカードリーダーの接続が必要です（検証はカード不要）。" \
             "- この .dmg は GitHub Actions 上でビルドされています（ローカルビルドではありません）。" \
             > notes.md
           gh release create "$GITHUB_REF_NAME" \
