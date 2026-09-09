@@ -90,7 +90,14 @@ CI からは [`.github/workflows/appstore.yml`](../.github/workflows/appstore.ym
 不要の画面**を撮る（検証結果・署名詳細・登記適合チェック・「このアプリについて」・
 取り込み/プレビュー/PIN 入力の NFC 直前まで）。`swift run TestSigner out.pdf テスト署名者 <入力PDF>`
 で生成したサンプル署名 PDF を検証タブで開いて撮影する。`fastlane/screenshots/<locale>/`
-（`ja` / `en-US`）に配置。必須サイズ: iPhone 6.9"（例 16 Pro Max）、iPad 13"（iPad 対応のため）。
+（`ja` / `en-US`）に配置。必須サイズ: iPhone 6.9"（例 16 Pro Max）のみ（本アプリは
+`TARGETED_DEVICE_FAMILY = 1` の iPhone 専用。Core NFC が iPhone 専用のため署名は iPad で
+動作せず、iPad はサポート対象外。6.9" を入れれば小型 iPhone は自動縮小される）。
+
+実カードで署名した PDF を検証すると署名者の氏名・住所が証明書から表示されるため、
+**公開スクリーンショットには使用しない**（個人情報の露出）。検証系の画面は上記 TestSigner
+の自己署名 PDF を使うか、実カード版を使う場合は氏名・住所を不可逆的にマスク（ベタ塗り
+焼き込み・全出現箇所）してから使用する。
 
 ### 審査対策
 
