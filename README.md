@@ -5,7 +5,7 @@
 [![Platforms](https://img.shields.io/badge/platforms-iOS%2017%2B%20%7C%20macOS%2014%2B-lightgrey.svg)](#対応端末)
 
 **On-device PDF signing and verification with Japan's My Number Card (マイナンバーカード) — no servers, no closed SDKs, no network access.**
-JPKI Local Signer reads the JPKI signing certificate from a physical My Number Card (over Core NFC on iPhone/iPad, or a USB PC/SC reader on macOS), builds a detached CMS (PKCS#7) signature and embeds it into a PDF entirely on-device, targeting the `adbe.pkcs7.detached` format required by Japan's registry e-filing system (登記・供託オンライン申請システム). It also verifies signed PDFs offline — signature value, document integrity, and certificate-chain trust (JPKI roots are bundled and pinned) — and can co-sign (multiple signers via incremental update). The entire pipeline is open source so that the claim "your signing material never leaves the device" can be independently audited.
+JPKI Local Signer reads the JPKI signing certificate from a physical My Number Card (over Core NFC on iPhone, or a USB PC/SC reader on macOS), builds a detached CMS (PKCS#7) signature and embeds it into a PDF entirely on-device, targeting the `adbe.pkcs7.detached` format required by Japan's registry e-filing system (登記・供託オンライン申請システム). It also verifies signed PDFs offline — signature value, document integrity, and certificate-chain trust (JPKI roots are bundled and pinned) — and can co-sign (multiple signers via incremental update). The entire pipeline is open source so that the claim "your signing material never leaves the device" can be independently audited.
 
 ---
 
@@ -104,7 +104,7 @@ env DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer swift test
 
 ## 対応端末
 
-- **iOS / iPadOS 17.0 以降**: NFC搭載の iPhone（`NFCTagReaderSession` によるISO 7816通信に対応した機種）。かざして署名。
+- **iOS 17.0 以降**: NFC搭載の iPhone（`NFCTagReaderSession` によるISO 7816通信に対応した機種）。かざして署名。iPad は Core NFC 非対応のため配布対象外（App は iPhone 専用）。
 - **macOS 14.0 以降**: USB の IC カードリーダー（PC/SC 対応）を接続して署名。ネイティブ macOS アプリ（Mac Catalyst ではない）。
 
 物理カード方式のため、Wallet搭載カード（スマホ用署名用電子証明書）のような iOS 18.5 以降 / iPhone XS 以降といった機種制約は受けません。検証（署名の確認）は iOS / macOS のどちらでも、カード不要で行えます。
