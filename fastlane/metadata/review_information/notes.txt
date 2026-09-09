@@ -19,3 +19,24 @@ or transit AID.
 This app generates signatures on the user's own documents with the user's own
 card; it is not a certification/verification service and is outside the scope of
 Japan's Act on Electronic Signatures (article 17 accreditation).
+
+----------------------------------------------------------------------
+【日本語（参考訳）】
+
+本アプリの「署名」機能は、実物のマイナンバーカード（JPKI）と NFC を必要とし、
+審査担当者が実機で試すことは通常できません。カード内の秘密鍵はカードの外に出ず、
+アプリはカード内で COMPUTE DIGITAL SIGNATURE を実行し、得られた署名値のみを PDF に
+埋め込みます（adbe.pkcs7.detached 形式。日本の登記・供託オンライン申請システム向け）。
+
+カードなしで確認できます：「検証」タブで署名済み PDF を開くと、署名値・文書の完全性・
+証明書チェーンを完全にオフラインで検証します。確認用の署名済みサンプル PDF を本提出に
+添付しています。
+
+サインイン／アカウントはありません。ネットワーク通信も一切行いません（通信 API を
+リンクしておらず、CI の scripts/check-no-network.sh で機械的に保証）。データも収集しません。
+
+NFC entitlement で宣言している識別子（AID D392F000260100000001）は、日本の公的個人認証
+（JPKI）のアプリケーション ID であり、決済・交通系の AID ではありません。
+
+本アプリは、利用者自身の文書に利用者自身のカードで署名を「生成」するツールであり、
+署名を検証するサービスではありません。公的個人認証法第17条（主務大臣認定）の対象外です。
